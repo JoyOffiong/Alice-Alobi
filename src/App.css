@@ -5,6 +5,43 @@
   pointer-events: none;
 }
 
+/* CSS */
+/* CSS */
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 70%;
+  height: 100%; /* Dark background with 0.6 opacity */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  animation: slide-in 2s ease forwards; /* Animation definition */
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%); /* Start offscreen (below) */
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0); /* End position (slide up) */
+    opacity: 1;
+  }
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -34,3 +71,4 @@
     transform: rotate(360deg);
   }
 }
+

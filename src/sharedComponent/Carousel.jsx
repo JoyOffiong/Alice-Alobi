@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import Carousel from 'react-multi-carousel';
 import {ImQuotesRight} from 'react-icons/im'
 import 'react-multi-carousel/lib/styles.css';
+import { Next, Previous } from 'iconsax-react';
 
 const data = [
   { id: 1,  image:"/assets/DL2.webp", text: ' I also became very fixated on myself and my image. I became very consumed with what people thought of me and was living for the acceptance ' },
@@ -76,14 +77,14 @@ const CarouselComponent = () => {
         ))}
       </Carousel>
 
-     < div className='flex gap-8 justify-center mt-24'>
+     < div className='flex gap-8 justify-center mt-[24px]'>
 
         
-      <button className="prev-button" onClick={handlePrevClick}>
-        Previous
+      <button className="prev-button rounded-md hover:p-0.5 transition-all" onClick={handlePrevClick}>
+      <Previous size="32" color="#8b8989" variant="Bold"/>
       </button>
-      <button className="next-button" onClick={handleNextClick}>
-        Next
+      <button className="next-button rounded-md hover:p-0.5 transition-all" onClick={handleNextClick}>
+      <Next size="32" color="#8b8989" variant="Bold"/>
       </button>
       </div>
     </div>

@@ -1,42 +1,55 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../sharedComponent/Header";
 import Footer from "../sharedComponent/Footer";
 import CarouselComponent from "../sharedComponent/Carousel";
 
 function LandingPage() {
+
+  const images = ['/assets/DL1.webp', '/assets/DL2.webp', '/assets/DL3.webp'];
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const nextImage = () => {
+    setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+  
+  useEffect(() => {
+    const interval = setInterval(nextImage, 3000);
+  
+    return () => {
+      clearInterval(interval); // Cleanup the interval on component unmount
+    };
+  }, []);
+
   return (
     <div className="bg-tetiaryColor flex flex-col mt-8 ">
       <Header />
-      <div className="flex flex-col-reverse pt-20 px-10 text-center justify-between md:flex-row md:px-20 items-center ">
-        {/* <div className="w-full md:w-[40%] text-left">
-          <p className="font-bold pb-5 text-center text-2xl md:text-left md:text-3xl ">
-            Empowering the Underserved Through Digital Literacy
-          </p>
-          <p className=" text-center md:text-left">
-            Welcome to Alice Alobi Foundation, where we believe that knowledge
-            is power. Our mission is to bridge the digital divide and empower
-            the underserved with essential digital skills. Join us in our
-            journey to create a more inclusive and equitable world.
-          </p>
-          <div className="text-center md:text-left pb-10">
-            <div>
-              <button className="bg-primaryColor rounded-lg mt-4 font-bold text-[16px]  p-2 text-tetiaryColor ">
-                Donate{" "}
-              </button>
-            </div>
-          </div>
-        </div> */}
+      <div className="relative flex flex-col-reverse text-center justify-between md:flex-row md:px-10 items-center">
+  <div className="w-full mb-30 relative">
 
-        <div className="w-full mb-30">
-          <img
-            src="/assets/DL2.webp"
-            alt="heroSection"
-            className="w-full object-cover rounded-md"
-          />
-        </div>
-      </div>
+    {/* Text block on top of the overlay with transparent background */}
+    <div className="absolute overlay inset-0 w-[70%] mx-auto z-[40px] flex flex-col justify-center items-center">
+      <p className="font-bold pb-5 text-center text-2xl z-50 md:text-3xl ">
+        Empowering the Underserved Through Digital Literacy
+      </p>
+      <p className=" text-center font-bold z-50">
+        Welcome to Alice Alobi Foundation, where we believe that knowledge
+        is power. Our mission is to bridge the digital divide and empower
+        the underserved with essential digital skills. Join us in our
+        journey to create a more inclusive and equitable world.
+      </p>
+     
+    </div>
 
-      <div className="px-20 flex flex-col gap-10 mt-20">
+    <img
+      src={images[currentImageIndex]}
+      alt="heroSection"
+      className={`w-full object-cover h-[600px] `} style={{ opacity: 0.3}}
+    />
+  </div>
+</div>
+
+
+      <div className="px-20 flex flex-col gap-10 mt-10">
         <div className="mb-12 font-bold text-3xl">
           {" "}
           <p>Key Activities</p>
