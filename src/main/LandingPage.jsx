@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Header from "../sharedComponent/Header";
 import Footer from "../sharedComponent/Footer";
 import CarouselComponent from "../sharedComponent/Carousel";
+import ReactPlayer from "react-player";
 
 function LandingPage() {
 
@@ -121,6 +122,15 @@ function LandingPage() {
         </div>
       <CarouselComponent/>
       </div>
+      <div className="h-[500px] mx-20"> 
+                      <ReactPlayer
+                        url='https://www.youtube.com/watch?v=29ylsrxof48'
+                        controls
+                        width="100%"
+                        height="100%"
+                        style={{ borderRadius: '10px' }}
+                      />
+                    </div>
       <Footer />
     </div>
   );
