@@ -8,7 +8,7 @@ function LandingPage() {
     <div className="bg-tetiaryColor flex flex-col mt-8 ">
       <Header />
       <div className="flex flex-col-reverse pt-20 px-10 text-center justify-between md:flex-row md:px-20 items-center ">
-        <div className="w-full md:w-[40%] text-left">
+        {/* <div className="w-full md:w-[40%] text-left">
           <p className="font-bold pb-5 text-center text-2xl md:text-left md:text-3xl ">
             Empowering the Underserved Through Digital Literacy
           </p>
@@ -25,9 +25,9 @@ function LandingPage() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <div className="w-full mb-30  md:w-[50%] ">
+        <div className="w-full mb-30">
           <img
             src="/assets/DL2.webp"
             alt="heroSection"
