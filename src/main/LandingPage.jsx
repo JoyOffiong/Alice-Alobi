@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../sharedComponent/Header";
 import Footer from "../sharedComponent/Footer";
-import Carousel from "react-multi-carousel";
 import CarouselComponent from "../sharedComponent/Carousel";
 
 function LandingPage() {

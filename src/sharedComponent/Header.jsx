@@ -1,4 +1,3 @@
-import { Link } from "iconsax-react";
 import { NavLink } from "react-router-dom";
 
 function Header() {

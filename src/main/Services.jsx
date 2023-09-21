@@ -14,7 +14,7 @@ function Services() {
     }, 2000); // 2 minutes in milliseconds
 
     return () => clearInterval(timer); // Clear the interval if the component unmounts
-  }, [images]);
+  }, [images.length]);
 
   const bgImage = images[img];
 

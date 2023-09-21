@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import Carousel from 'react-multi-carousel';
-import {ImQuotesLeft, ImQuotesRight} from 'react-icons/im'
+import {ImQuotesRight} from 'react-icons/im'
 import 'react-multi-carousel/lib/styles.css';
 
 const data = [
