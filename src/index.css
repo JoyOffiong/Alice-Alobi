@@ -7,7 +7,7 @@
 @tailwind utilities;
 body {
   margin: 0;
-  background-color: #f0deeb;
+  background-color: white;
   font-family:'poppins';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

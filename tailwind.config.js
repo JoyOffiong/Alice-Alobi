@@ -6,13 +6,9 @@ module.exports = {
   theme: {
 
     extend: {},
-    colors:{
-    primaryColor:'#003153',
-    secondaryColor:"#fa8128",
-    tetiaryColor:"#f0deeb",
-    },
+
     fontFamily: {
-      sans: ["poppins"],
+      sans: ["Josefin Sans"],
     },
   },
   plugins: [],

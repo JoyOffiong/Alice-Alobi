@@ -26,7 +26,7 @@ import { Facebook, Instagram, Whatsapp } from "iconsax-react"
 //   }
 
 const Footer = () => (
-  <div className="flex flex-col p-8 mt-20 bg-primaryColor justify-center items-center ">
+  <div className="flex flex-col p-8 mt-20 bg-[black] justify-center items-center ">
     <div className="w-full text-center mb-4">
       <h1 className="text-[#fff]">Do you want to step in to the future before others</h1>
     </div>
@@ -37,11 +37,10 @@ const Footer = () => (
 
     <div className="flex justify-between flex-row flex-wrap w-full">
       <div className="flex flex-col">
-        <img src='/assets/logo.jpg' alt="logo" className=" h-[100px] w-[100px]"/>
-        <div className="flex gap-4 mt-4"> <Facebook size="24" color="#fa8128" variant="Bold"/>
-      <Whatsapp size="24" color='#fa8128' variant="Bold"/>
-           <Instagram size="24" color="#fa8128" variant="Bold"/>
-         </div>
+        <div className="rounded-full">
+
+        <img src='/assets/coclogo.jpg' alt="logo" className=" h-[100px] w-[100px] rounded-full"/>
+        </div>
       </div>
       <div className="flex flex-start flex-col text-[#fff] ">
         <h4 className="text-[14px] font-bold  mb-4">Links</h4>
