@@ -1,79 +1,80 @@
+/* eslint-disable no-script-url */
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable react/button-has-type */
+
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import { RiMenuUnfoldFill } from "react-icons/ri";
+import { AppBar, Toolbar, Typography, Button } from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 
-function Header() {
-  const [showNav, setShowNav] = useState(false);
+const Navbar = () => {
+  // State to control the visibility of the mobile menu
+  const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
 
-  const showNavBar = () => {
-    console.log(showNav);
-    setShowNav(true);
+  // Function to toggle the mobile menu
+  const toggleMobileMenu = () => {
+    setMobileMenuVisible(!isMobileMenuVisible);
   };
 
   return (
-    <>
-      <div className="top-0 mt-0 w-full text-white font-semibold static bg-[black] px-12 py-4">
-        <div className="flex justify-between items-center ">
-          {/* logo */}
-          <div className="w-[20%] ">
-            <img
-              src="/assets/coclogo.jpg"
-              alt=""
-              className="md:h-20 md:w-20 h-50 h-50 rounded-full object-contain"
-            />
-          </div>
-
-          {/*desktop navs */}
-          <div className="w-[70%] flex justify-start">
-            <div className="hidden md:flex text-center items-center font-[500] text-[18px] text-tetiaryColor gap-16">
-              <NavLink to={"/"}>
-                <p>Home</p>
-              </NavLink>
-              <NavLink to="#about">
-                {" "}
-                <p>About</p>
-              </NavLink>
-              <NavLink to={"/services"}>
-                {" "}
-                <p>Service</p>
-              </NavLink>
-              <NavLink to={"/contactUs"}>
-                {" "}
-                <p>Contact Us</p>
-              </NavLink>
-            </div>
-
-            <div className="md:hidden block">
-              <RiMenuUnfoldFill onClick={() => showNavBar()} />
-            </div>
-          </div>
-
-          {/* mobile nav */}
-          <div
-            className={`md:hidden ${
-              showNav && "block"
-            } flex flex-col gap-y-20 text-tetiaryColor translate-x-full bg-[#540bb2]`}
-          >
-            <NavLink to={"/"}>
-              <p>Home</p>
-            </NavLink>
-            <NavLink to={"/about"}>
-              {" "}
-              <p>About</p>
-            </NavLink>
-            <NavLink to={"/services"}>
-              {" "}
-              <p>Service</p>
-            </NavLink>
-            <NavLink to={"/contactUs"}>
-              {" "}
-              <p>Contact Us</p>
-            </NavLink>
-          </div>
+    <AppBar position="fixed" className="bg-[#fff]">
+      <Toolbar className="lg:max-w-7xl justify-between   ">
+        {/* Logo */}
+        <div>
+          <Typography variant="h6" className="text-[#1d443f]">
+            Mentoring App
+          </Typography>
         </div>
-      </div>
-    </>
-  );
-}
 
-export default Header;
+        {/* Mobile Hamburger Menu */}
+
+        <Button
+          onClick={toggleMobileMenu}
+          className="text-[#1d443f] cursor-pointer focus:outline-none md:hidden"
+        >
+          ☰
+        </Button>
+
+        {/* Navigation Links (Mobile) */}
+        <div
+          className={`md:hidden absolute top-full left-0 bg-[#fbf7ee] w-[100%]   ${
+            isMobileMenuVisible ? "" : "hidden"
+          }`}
+        >
+          <ul className="px-24">
+            <li className="my-14">
+              <Link to="/home" className="link-no-underline mb-[20rem]">
+                <p className="text-[#1d443f]">Home</p>
+              </Link>
+            </li>
+            <li className="my-14">
+              <Link to="/all-course" className="link-no-underline mb-[20rem]">
+                <p className="text-[#1d443f]">Courses</p>
+              </Link>
+            </li>
+            <li className="my-14">
+              <Link to="/tutor" className="link-no-underline gap-y-24">
+                <p className="text-[#1d443f]">Tutor</p>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Navigation Links (Desktop) */}
+
+        <div className="hidden md:flex flex-row gap-x-24  items-center">
+          <Link to="/home" className="link-no-underline">
+            <p className="text-[#1d443f]">Home</p>
+          </Link>
+          <Link to="/all-course" className="link-no-underline">
+            <p className="text-[#1d443f]">Courses</p>
+          </Link>
+          <Link to="/tutor" className="link-no-underline ">
+            <p className="text-[#1d443f]">Tutor</p>
+          </Link>
+        </div>
+      </Toolbar>
+    </AppBar>
+  );
+};
+
+export default Navbar;

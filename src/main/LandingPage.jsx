@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from "react";
 import { Link, animateScroll as scroll } from "react-scroll";
 import Footer from "../sharedComponent/Footer";
-import { RiMenuUnfoldFill } from "react-icons/ri";
+import MenuIcon from "@mui/icons-material/Menu";
 import HeroSection from "./LandingPagecomponents/heroSection";
 import AboutTheChurch from "./LandingPagecomponents/AboutTheChurch";
 import MajorTeachings from "./LandingPagecomponents/majorTeachings";
 import WorshipSchedule from "./LandingPagecomponents/WorshipSchedule";
 import Baptism from "./LandingPagecomponents/Baptism";
+import { AppBar, Toolbar } from "@mui/material";
+import ContactUs from "./ContactUs";
 
 function LandingPage() {
-  const [showNav, setShowNav] = useState(false);
-
+  const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
+  const toggleMobileMenu = () => {
+    setMobileMenuVisible(!isMobileMenuVisible);
+  };
   const images = ["/assets/DL1.webp", "/assets/DL2.webp", "/assets/DL3.webp"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -33,154 +37,149 @@ function LandingPage() {
   }, []);
 
   return (
-    <div className="bg-tetiaryColor flex flex-col font-sans">
-      <div className="top-0 mt-0 z-40 text-white font-semibold fixed w-full  bg-[black] px-12 py-4">
-        <div className="flex justify-between items-center ">
-          {/* logo */}
-          <div className="md:w-[20%] w-full flex flex-row items-center justify-between">
-            <div className="md:h-20 md:w-20 h-28 w-28">
-              <img
-                src="/assets/coclogo.jpg"
-                alt=""
-                className="w-full h-full rounded-full object-contain"
-              />
-            </div>
-            <div className="md:hidden block">
-              <button
-                type="button"
-                onClick={() => {
-                  setShowNav(!showNav);
-                  console.log(showNav);
-                }}
-              >
-                Menu
-              </button>
-            </div>
+    <>
+      <AppBar position="fixed" className="bg-[#000] font-sans">
+        <Toolbar className="justify-between py-4 bg-black  ">
+          {/* Logo */}
+          <div className="md:h-20 md:w-20 h-28 w-28">
+            <img
+              src="/assets/coclogo.jpg"
+              alt=""
+              className="w-full h-full rounded-full object-contain"
+            />
           </div>
 
-          <div className="w-0 md:w-[70%] ">
-            {/*desktop navs */}
-            <div className="hidden md:block justify-start">
-              <div className=" md:flex text-center items-center font-[500] text-[18px] text-tetiaryColor gap-16">
-                <Link
-                  to="home"
-                  spy={true}
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  activeClass="active"
-                  onSetActive={() => handleSetActive("home")}
-                >
-                  Home
-                </Link>
-                <Link
-                  to="about"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  activeClass="active"
-                  onSetActive={() => handleSetActive("about")}
-                >
-                  About
-                </Link>
-                <Link
-                  to="lessons"
-                  spy={true}
-                  smooth={true}
-                  offset={-150}
-                  duration={500}
-                  activeClass="active"
-                  onSetActive={() => handleSetActive("lessons")}
-                >
-                  Lessons
-                </Link>
-                <Link
-                  to="contact-us"
-                  spy={true}
-                  smooth={true}
-                  offset={-100}
-                  duration={500}
-                  activeClass="active"
-                  onSetActive={() => handleSetActive("contact-us")}
-                >
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-
-            {/* mobile nav */}
-            <div
-              className={`${
-                showNav === true ? "block" : "hidden"
-              } flex flex-col gap-y-20 text-tetiaryColor translate-x-full`}
+          {/* hamburger menu */}
+          <button
+            type="button"
+            onClick={toggleMobileMenu}
+            className=" cursor-pointer focus:outline-none md:hidden"
+          >
+            <MenuIcon />
+          </button>
+          {/* Navigation Links (Mobile) */}
+          <div
+            className={`md:hidden absolute flex px-4 flex-col text-black gap-y-6 top-full right-0 bg-[#fbf7ee] w-[30%] ${
+              isMobileMenuVisible ? "" : "hidden"
+            }`}
+          >
+            <Link
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              activeClass="active"
+              onSetActive={() => handleSetActive("home")}
             >
-              <Link
-                to="home"
-                spy={true}
-                smooth={true}
-                offset={-70}
-                duration={500}
-                activeClass="active"
-                onSetActive={() => handleSetActive("home")}
-              >
-                Home
-              </Link>
-              <Link
-                to="about"
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={500}
-                activeClass="active"
-                onSetActive={() => handleSetActive("about")}
-              >
-                About
-              </Link>
-              <Link
-                to="lessons"
-                spy={true}
-                smooth={true}
-                offset={-150}
-                duration={500}
-                activeClass="active"
-                onSetActive={() => handleSetActive("lessons")}
-              >
-                Lessons
-              </Link>
-              <Link
-                to="contact-us"
-                spy={true}
-                smooth={true}
-                offset={-100}
-                duration={500}
-                activeClass="active"
-                onSetActive={() => handleSetActive("contact-us")}
-              >
-                Contact Us
-              </Link>
-            </div>
+              Home
+            </Link>
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              activeClass="active"
+              onSetActive={() => handleSetActive("about")}
+            >
+              About
+            </Link>
+            <Link
+              to="lessons"
+              spy={true}
+              smooth={true}
+              offset={-150}
+              duration={500}
+              activeClass="active"
+              onSetActive={() => handleSetActive("lessons")}
+            >
+              Lessons
+            </Link>
+            <Link
+              to="contact-us"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              activeClass="active"
+              onSetActive={() => handleSetActive("contact-us")}
+            >
+              Contact Us
+            </Link>
           </div>
-        </div>
-      </div>
+          {/* Navigation Links (Desktop) */}
 
-      <div id="home" className="mt-24">
+          <div className="hidden md:flex flex-row gap-x-24  items-center">
+            <Link
+              to="home"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              activeClass="active"
+              onSetActive={() => handleSetActive("home")}
+            >
+              Home
+            </Link>
+            <Link
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              activeClass="active"
+              onSetActive={() => handleSetActive("about")}
+            >
+              About
+            </Link>
+            <Link
+              to="lessons"
+              spy={true}
+              smooth={true}
+              offset={-150}
+              duration={500}
+              activeClass="active"
+              onSetActive={() => handleSetActive("lessons")}
+            >
+              Lessons
+            </Link>
+            <Link
+              to="contact-us"
+              spy={true}
+              smooth={true}
+              offset={-100}
+              duration={500}
+              activeClass="active"
+              onSetActive={() => handleSetActive("contact-us")}
+            >
+              Contact Us
+            </Link>
+          </div>
+        </Toolbar>
+      </AppBar>
+
+      <div id="home" className="font-sans">
         <HeroSection />
       </div>
 
-      <div id="about">
+      <div id="about" className="font-sans pt-24">
         <AboutTheChurch />
       </div>
 
-      <div id="lessons">
+      <div id="lessons" className="font-sans mt-24">
         <MajorTeachings />
       </div>
 
-      <div>
+      <div className="font-sans mt-24">
         <Baptism />
       </div>
-      <div id="contact-us">
+
+      <div className="mt-24">
         <WorshipSchedule />
+      </div>
+      <div id="contact-us" className="font-sans">
+        <ContactUs />
       </div>
 
       {/* carousel */}
@@ -212,7 +211,7 @@ function LandingPage() {
       </p> */}
 
       <Footer />
-    </div>
+    </>
   );
 }
 

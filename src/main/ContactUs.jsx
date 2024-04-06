@@ -1,29 +1,22 @@
 import { Send } from "iconsax-react";
 import React from "react";
-import Header from "../sharedComponent/Header";
-import Footer from "../sharedComponent/Footer";
+import GoogleMap from "./LandingPagecomponents/Map";
+// import Footer from "../sharedComponent/Footer";
 
 function ContactUs() {
   return (
     <div className="bg-tetiaryColor flex flex-col mt-8 ">
-      <Header />
-      <div className="=flex items-center">
+      <div className=" justify-between flex-col md:flex-row flex items-center">
         {/* <div className="w-[60%] h-full">
       <img src="/assets/DL0.webp" alt="" className="object-cover w-full"/>
     </div> */}
-
-        <div className="flex mt-10 flex-col mx-auto w-[60%]  rounded-lg shadow-lg top-24 bg-tetiaryColor ">
+        <div className="md:w-[50%] w-full">
+          <GoogleMap />
+        </div>
+        <div className="flex mt-10 flex-col mx-auto w-full md:w-[40%]  rounded-lg shadow-lg top-24 bg-tetiaryColor ">
           <div className="flex gap-8">
-            <img
-              src="/assets/logo.jpg"
-              alt="logo"
-              className="w-[150px] rounded-md"
-            />
             <div className="mt-4 text">
               <p className="font-bold text-[18px]">Contact US</p>
-              <p className="font-normal mt-4  text-[18px] ">
-                Inorder to get through to the team for enquiries or Donations
-              </p>
             </div>
           </div>
 
@@ -59,7 +52,7 @@ function ContactUs() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
