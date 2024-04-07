@@ -41,7 +41,7 @@ function LandingPage() {
       <AppBar position="fixed" className="bg-[#000] font-sans">
         <Toolbar className="justify-between py-4 bg-black  ">
           {/* Logo */}
-          <div className="md:h-14 md:w-14 h-18 w-18">
+          <div className="md:h-14 md:w-14 h-12 w-12">
             <img
               src="/assets/coclogo.jpg"
               alt=""
