@@ -1,5 +1,7 @@
 import { Send } from "iconsax-react";
 import React from "react";
+import AddIcCallIcon from "@mui/icons-material/AddIcCall";
+import AttachEmailIcon from "@mui/icons-material/AttachEmail";
 import AddLocationIcon from "@mui/icons-material/AddLocation"; // import Footer from "../sharedComponent/Footer";
 
 function ContactUs() {
@@ -9,7 +11,7 @@ function ContactUs() {
         {/* <div className="w-[60%] h-full">
       <img src="/assets/DL0.webp" alt="" className="object-cover w-full"/>
     </div> */}
-        <div className="">
+        <div className="p-8">
           <div className="flex flex-col gap-y-8 pt-10">
             <div className="flex items-center gap-x-4">
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-[#F26522] transition-all duration-300">
@@ -27,7 +29,7 @@ function ContactUs() {
             <div className="flex items-center gap-x-4">
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-[#F26522] transition-all duration-300">
                 <p className="text-white ">
-                  <AddLocationIcon fontSize="12px" />
+                  <AttachEmailIcon fontSize="12px" />
                 </p>
               </div>
               <div>
@@ -38,7 +40,7 @@ function ContactUs() {
             <div className="flex items-center gap-x-4">
               <div className="h-12 w-12 flex items-center justify-center rounded-full bg-[#F26522] transition-all duration-300">
                 <p className="text-white ">
-                  <AddLocationIcon fontSize="12px" />
+                  <AddIcCallIcon fontSize="12px" />
                 </p>
               </div>
               <div>

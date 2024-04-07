@@ -1,10 +1,12 @@
 import React from "react";
-import Header from "../../sharedComponent/Header";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
 function TeachingsOnMarriage() {
+  const navigate = useNavigate();
   return (
     <div className="font-sans">
-      <Header />
+      <Button onCLick={() => navigate(-1)}>Back</Button>
       <div className="h-[400px] shadow-lg ">
         <img
           src="https://www.churchofjesuschrist.org/imgs/4fa61b95a20557586b4db7755bc9ba99928ffacc/full/1280%2C/0/default"
