@@ -14,7 +14,7 @@ function ContactUs() {
           <GoogleMap />
         </div>
         <div className="flex mt-10 flex-col mx-auto w-full md:w-[40%]  rounded-lg shadow-lg top-24 bg-tetiaryColor ">
-          <div className="flex gap-8">
+          <div className="flex gap-8 p-4">
             <div className="mt-4 text">
               <p className="font-bold text-[18px]">Contact US</p>
             </div>
