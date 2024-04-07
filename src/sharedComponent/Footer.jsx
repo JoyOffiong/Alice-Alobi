@@ -40,6 +40,10 @@ const Footer = () => (
         </div>
       </div>
     </div>
+
+    <div className="flex justify-end text-white">
+      <a href="/">Back to top</a>
+    </div>
   </div>
 );
 

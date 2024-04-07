@@ -9,6 +9,7 @@ import WorshipSchedule from "./LandingPagecomponents/WorshipSchedule";
 import Baptism from "./LandingPagecomponents/Baptism";
 import { AppBar, Toolbar } from "@mui/material";
 import ContactUs from "./ContactUs";
+import GoogleMap from "./LandingPagecomponents/Map";
 
 function LandingPage() {
   const [isMobileMenuVisible, setMobileMenuVisible] = useState(false);
@@ -180,6 +181,9 @@ function LandingPage() {
       </div>
       <div id="contact-us" className="font-sans">
         <ContactUs />
+      </div>
+      <div id="contact-us" className="font-sans">
+        <GoogleMap />
       </div>
 
       {/* carousel */}
